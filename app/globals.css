@@ -124,6 +124,10 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
 }
 
 @keyframes blob {
@@ -155,9 +159,15 @@
 .animation-delay-4000 {
   animation-delay: 4s;
 }
+
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-25%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-25%);
+  }
 }
 
 .animate-marquee {

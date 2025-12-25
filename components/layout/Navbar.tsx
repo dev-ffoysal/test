@@ -36,7 +36,7 @@ export function Navbar() {
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
                         <div className="size-8 bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl rounded-none">
-                            N
+                            D
                         </div>
                         <span className="text-xl font-bold tracking-tight">
                             {SITE_CONFIG.name}

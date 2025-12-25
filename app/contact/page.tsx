@@ -1,16 +1,29 @@
+"use client";
+
+import { useState } from "react";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select";
 import { SITE_CONFIG } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 
 export default function ContactPage() {
+    const [activeTab, setActiveTab] = useState<"hello" | "quote">("hello");
+
     return (
         <div className="bg-background">
             <section className="py-20 lg:py-32 bg-muted/30">
                 <div className="container px-4 mx-auto text-center max-w-3xl">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6">Let's Build Something Great</h1>
+                    <h1 className="text-4xl md:text-6xl font-bold mb-6">Let's Build Something Amazing Together</h1>
                     <p className="text-xl text-muted-foreground">
                         Whether you have a specific project in mind or just want to explore a new idea, we're here to help.
                     </p>
@@ -20,52 +33,119 @@ export default function ContactPage() {
             <section className="py-24">
                 <div className="container px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
                     {/* Contact Form */}
-                    <div className="bg-card p-8 rounded-none border border-border shadow-sm">
-                        <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-                        <form className="space-y-6">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <Label htmlFor="firstName">First Name</Label>
-                                    <Input id="firstName" placeholder="John" />
+                    <div className="bg-card p-0 rounded-none border border-border shadow-sm overflow-hidden">
+                        {/* Custom Tabs */}
+                        <div className="flex w-full border-b border-border">
+                            <button
+                                onClick={() => setActiveTab("hello")}
+                                className={cn(
+                                    "flex-1 py-4 text-sm font-bold uppercase tracking-wider transition-colors",
+                                    activeTab === "hello"
+                                        ? "bg-background border-b-2 border-primary text-foreground"
+                                        : "bg-muted/50 text-muted-foreground hover:text-foreground"
+                                )}
+                            >
+                                Say Hello!
+                            </button>
+                            <button
+                                onClick={() => setActiveTab("quote")}
+                                className={cn(
+                                    "flex-1 py-4 text-sm font-bold uppercase tracking-wider transition-colors",
+                                    activeTab === "quote"
+                                        ? "bg-background border-b-2 border-primary text-foreground"
+                                        : "bg-muted/50 text-muted-foreground hover:text-foreground"
+                                )}
+                            >
+                                Get a Quote
+                            </button>
+                        </div>
+
+                        <div className="p-8">
+                            <form className="space-y-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <Label htmlFor="name">Name<span className="text-destructive">*</span></Label>
+                                        <Input id="name" placeholder="Your name" required className="bg-background" />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label htmlFor="email">Email<span className="text-destructive">*</span></Label>
+                                        <Input id="email" type="email" placeholder="Your email address" required className="bg-background" />
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <Label htmlFor="phone">Phone</Label>
+                                        <Input id="phone" type="tel" placeholder="Your phone number" className="bg-background" />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label htmlFor="company">Company/Organisation</Label>
+                                        <Input id="company" placeholder="Ex. Devlyfi" className="bg-background" />
+                                    </div>
+
+                                    {/* Quote-specific fields */}
+                                    {activeTab === "quote" && (
+                                        <>
+                                            <div className="space-y-2">
+                                                <Label htmlFor="type">Project type<span className="text-destructive">*</span></Label>
+                                                <Select>
+                                                    <SelectTrigger id="type" className="bg-background w-full">
+                                                        <SelectValue placeholder="Project type" />
+                                                    </SelectTrigger>
+                                                    <SelectContent>
+                                                        <SelectItem value="web">Web Development</SelectItem>
+                                                        <SelectItem value="mobile">Mobile App</SelectItem>
+                                                        <SelectItem value="uiux">UI/UX Design</SelectItem>
+                                                        <SelectItem value="ai">AI Solution</SelectItem>
+                                                        <SelectItem value="other">Other</SelectItem>
+                                                    </SelectContent>
+                                                </Select>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <Label htmlFor="budget">Project budget (USD)<span className="text-destructive">*</span></Label>
+                                                <Select>
+                                                    <SelectTrigger id="budget" className="bg-background w-full">
+                                                        <SelectValue placeholder="Select budget" />
+                                                    </SelectTrigger>
+                                                    <SelectContent>
+                                                        <SelectItem value="lt5k">Less than $5K</SelectItem>
+                                                        <SelectItem value="5k-10k">$5K - $10K</SelectItem>
+                                                        <SelectItem value="10k-20k">$10K - $20K</SelectItem>
+                                                        <SelectItem value="20k-50k">$20K - $50K</SelectItem>
+                                                        <SelectItem value="gt50k">More than $50K</SelectItem>
+                                                    </SelectContent>
+                                                </Select>
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
+
+                                {activeTab === "quote" && (
+                                    <div className="space-y-2">
+                                        <Label htmlFor="source">How did you hear about us?</Label>
+                                        <Select>
+                                            <SelectTrigger id="source" className="bg-background w-full">
+                                                <SelectValue placeholder="Select" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                <SelectItem value="google">Google Search</SelectItem>
+                                                <SelectItem value="social">Social Media</SelectItem>
+                                                <SelectItem value="clutch">Clutch/Upwork</SelectItem>
+                                                <SelectItem value="referral">Referral</SelectItem>
+                                                <SelectItem value="other">Other</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                    </div>
+                                )}
+
                                 <div className="space-y-2">
-                                    <Label htmlFor="lastName">Last Name</Label>
-                                    <Input id="lastName" placeholder="Doe" />
+                                    <Label htmlFor="message">Tell us about your project<span className="text-destructive">*</span></Label>
+                                    <Textarea id="message" required placeholder={activeTab === "quote" ? "Ex. Hello, Devlyfi Design. We need help to make this project unique." : "How can we help you?"} className="min-h-[150px] bg-background" />
                                 </div>
-                            </div>
 
-                            <div className="space-y-2">
-                                <Label htmlFor="email">Work Email</Label>
-                                <Input id="email" type="email" placeholder="john@company.com" />
-                            </div>
-
-                            <div className="space-y-2">
-                                <Label htmlFor="type">Inquiry Type</Label>
-                                <select className="flex h-10 w-full rounded-none border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-                                    <option>General Inquiry</option>
-                                    <option>New Project</option>
-                                    <option>Partnership</option>
-                                    <option>Career</option>
-                                </select>
-                            </div>
-
-                            <div className="space-y-2">
-                                <Label htmlFor="message">Message</Label>
-                                <Textarea id="message" placeholder="Tell us about your project goals, timeline, and budget..." className="min-h-[150px]" />
-                            </div>
-
-                            <div className="flex items-center space-x-2">
-                                <input id="nda" type="checkbox" className="h-4 w-4 rounded border-primary text-primary focus:ring-primary" />
-                                <label
-                                    htmlFor="nda"
-                                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                                >
-                                    Request NDA before discussion
-                                </label>
-                            </div>
-
-                            <Button size="lg" className="w-full">Send Message</Button>
-                        </form>
+                                <Button size="lg" className="w-full">
+                                    {activeTab === "hello" ? "Send Message" : "Submit Request"}
+                                </Button>
+                            </form>
+                        </div>
                     </div>
 
                     {/* Contact Info */}
@@ -106,7 +186,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <p className="font-bold">Business Hours</p>
-                                        <p className="text-muted-foreground">Mon - Fri: 9:00 AM - 6:00 PM (PST)</p>
+                                        <p className="text-muted-foreground">Mon - Sat: 9:00 AM - 8:30 PM</p>
                                     </div>
                                 </div>
                             </div>
@@ -119,8 +199,8 @@ export default function ContactPage() {
                             </p>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
+                </div >
+            </section >
+        </div >
     );
 }

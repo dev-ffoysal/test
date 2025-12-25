@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, TrendingUp, Users, Award, Globe } from "lucide-react";
+import { TeamSection } from "@/components/sections/home/TeamSection";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -120,23 +121,11 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Leadership Team Placeholder */}
-            <section className="py-24">
-                <div className="container px-4 mx-auto text-center">
-                    <h2 className="text-3xl font-bold mb-12">Meet Our Leadership</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-                        {[1, 2, 3, 4].map((i) => (
-                            <div key={i} className="group">
-                                <div className="aspect-square bg-muted rounded-none mb-4 relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-muted-foreground/10 group-hover:bg-primary/10 transition-colors" />
-                                </div>
-                                <h3 className="font-bold">Member Name</h3>
-                                <p className="text-sm text-muted-foreground">Position {i}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            {/* Team Section */}
+            <TeamSection
+                title="Leadership Team"
+                subtitle="The visionaries and innovators steering Devlyfi towards global excellence."
+            />
         </div>
     );
 }

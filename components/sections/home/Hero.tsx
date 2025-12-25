@@ -18,12 +18,12 @@ export function Hero() {
                 </div>
 
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight max-w-4xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-                    Transforming Visions into <br className="hidden sm:block" />
-                    <span className="text-primary block mt-2">Digital Reality</span>
+                    Innovation You Can Trust. <br className="hidden sm:block" />
+                    <span className="text-primary block mt-2">Results You Can Measure.</span>
                 </h1>
 
                 <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                    We are a premium software consultancy specializing in scalable web/mobile apps, AI integration, and cloud infrastructure for forward-thinking enterprises.
+                    We craft innovative software solutions that transform businesses and delight users. Your trusted technology partner for digital excellence.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 w-full justify-center pt-4">
@@ -40,17 +40,17 @@ export function Hero() {
                 </div>
 
                 {/* Clients/Trust Badges Placeholder */}
-                <div className="pt-16 opacity-70">
-                    <p className="text-sm font-medium text-muted-foreground mb-6 uppercase tracking-widest">
-                        Trusted by innovative leaders
+                <div className="pt-16">
+                    <p className="text-sm font-medium text-muted-foreground/60 mb-8 uppercase tracking-[0.3em]">
+                        Trusted by industry leaders
                     </p>
-                    <div className="flex flex-wrap justify-center gap-8 md:gap-16 grayscale opacity-60">
-                        {/* Simple Text Placeholders for Logos to avoid external assets for now */}
-                        <span className="text-xl font-bold">Acme Corp</span>
-                        <span className="text-xl font-bold">GlobalTech</span>
-                        <span className="text-xl font-bold">Nebula.ai</span>
-                        <span className="text-xl font-bold">SaaS Flow</span>
-                        <span className="text-xl font-bold">GreenEnergy</span>
+                    <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 md:gap-x-20 opacity-80">
+                        {/* Improved typography for brand placeholders */}
+                        {["Acme Corp", "GlobalTech", "Nebula.ai", "SaaS Flow", "GreenEnergy"].map((brand) => (
+                            <span key={brand} className="text-xl md:text-2xl font-black tracking-tighter text-muted-foreground hover:text-foreground transition-colors cursor-default">
+                                {brand}
+                            </span>
+                        ))}
                     </div>
                 </div>
             </div>

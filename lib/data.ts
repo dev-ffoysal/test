@@ -13,25 +13,25 @@ export const SERVICES = [
     {
         id: "web-dev",
         slug: "web-application-development",
-        title: "Web Application Development",
-        shortDesc: "Scalable, high-performance web apps built with modern frameworks.",
+        title: "Web Development",
+        shortDesc: "Build powerful, scalable web applications with modern frameworks.",
         icon: Code2,
-        fullDesc: "We build enterprise-grade web applications that are secure, scalable, and user-centric. From complex SaaS platforms to customer-facing portals, our engineering team utilizes the latest technologies to deliver robust solutions.",
+        fullDesc: "We build powerful, scalable web applications with modern frameworks and best practices. From complex SaaS platforms to customer-facing portals, our engineering team utilizes the latest technologies to deliver robust solutions.",
         features: [
-            "Custom Full-Stack Development",
-            "SaaS Application Architectures",
+            "Full-Stack Development",
+            "SaaS Architectures",
             "Progressive Web Apps (PWA)",
             "API First Design",
-            "Cloud-Native Solutions"
+            "Frontend Performance Optimization"
         ]
     },
     {
         id: "mobile-dev",
         slug: "mobile-app-development",
         title: "Mobile App Development",
-        shortDesc: "Native and cross-platform mobile experiences for iOS and Android.",
+        shortDesc: "Create engaging native and cross-platform mobile applications.",
         icon: Smartphone,
-        fullDesc: "Reach your customers on their favorite devices with our mobile development services. We create seamless, high-performance mobile applications using React Native, Flutter, and native technologies.",
+        fullDesc: "Create engaging native and cross-platform mobile applications for iOS and Android. We ensure seamless performance and intuitive user experiences that keep your customers engaged.",
         features: [
             "iOS & Android Native Dev",
             "Cross-Platform (React Native/Flutter)",
@@ -41,42 +41,12 @@ export const SERVICES = [
         ]
     },
     {
-        id: "ai-ml",
-        slug: "ai-machine-learning",
-        title: "AI & Machine Learning",
-        shortDesc: "Intelligent solutions that drive automation and insights.",
-        icon: BrainCircuit,
-        fullDesc: "Leverage the power of Artificial Intelligence to transform your business. We develop custom ML models, NLP solutions, and predictive analytics tools to help you make data-driven decisions.",
-        features: [
-            "Predictive Analytics",
-            "Natural Language Processing",
-            "Computer Vision",
-            "Process Automation",
-            "AI Strategy Consulting"
-        ]
-    },
-    {
-        id: "cloud-devops",
-        slug: "cloud-devops",
-        title: "Cloud & DevOps",
-        shortDesc: "Secure cloud infrastructure and CI/CD automation pipelines.",
-        icon: Cloud,
-        fullDesc: "Accelerate your delivery and ensure reliability with our Cloud and DevOps services. We help you migrate to the cloud, optimize your infrastructure, and implement automated CI/CD pipelines.",
-        features: [
-            "Cloud Migration (AWS/Azure/GCP)",
-            "Infrastructure as Code",
-            "CI/CD Pipelines",
-            "Security & Compliance",
-            "24/7 Monitoring"
-        ]
-    },
-    {
         id: "ui-ux",
         slug: "ui-ux-design",
         title: "UI/UX Design",
-        shortDesc: "User-centered design that creates engaging digital experiences.",
+        shortDesc: "Design beautiful, intuitive interfaces that users love.",
         icon: Palette,
-        fullDesc: "Great software starts with great design. Our design team creates intuitive, accessible, and beautiful interfaces that delight users and drive conversions.",
+        fullDesc: "Design beautiful, intuitive interfaces that users love and that drive conversions. Our user-centric approach ensures your product is not only visually stunning but also easy to navigate.",
         features: [
             "User Research & Personas",
             "Wireframing & Prototyping",
@@ -86,18 +56,78 @@ export const SERVICES = [
         ]
     },
     {
-        id: "blockchain",
-        slug: "blockchain-emerging-tech",
-        title: "Blockchain & Emerging Tech",
-        shortDesc: "Decentralized solutions for the next generation of the web.",
-        icon: Blocks,
-        fullDesc: "Explore the potential of Web3 and blockchain technology. We build decentralized applications (dApps), smart contracts, and enterprise blockchain solutions.",
+        id: "ai-solutions",
+        slug: "ai-solutions",
+        title: "AI Solutions",
+        shortDesc: "Leverage cutting-edge AI to automate workflows and unlock insights.",
+        icon: BrainCircuit,
+        fullDesc: "Leverage cutting-edge artificial intelligence to automate workflows, enhance user experiences, and unlock next-level business intelligence. We help you integrate AI seamlessly into your operations.",
         features: [
-            "Smart Contract Development",
-            "DeFi Solutions",
-            "NFT Marketplaces",
-            "Private Blockchain Networks",
-            "Web3 Integration"
+            "Process Automation",
+            "Predictive Analytics",
+            "Natural Language Processing",
+            "Computer Vision",
+            "AI Strategy Consulting"
+        ]
+    },
+    {
+        id: "cloud-services",
+        slug: "cloud-services",
+        title: "Cloud Services",
+        shortDesc: "Scalable, reliable, and cost-effective cloud infrastructure solutions.",
+        icon: Cloud,
+        fullDesc: "Leverage cloud infrastructure for scalable, reliable, and cost-effective solutions. We help you migrate, manage, and optimize your cloud environment for maximum performance.",
+        features: [
+            "Cloud Migration (AWS/Azure/GCP)",
+            "Infrastructure Optimization",
+            "Cost Management",
+            "Security & Compliance",
+            "24/7 Monitoring"
+        ]
+    },
+    {
+        id: "wordpress-dev",
+        slug: "wordpress-development",
+        title: "WordPress Development",
+        shortDesc: "Fast, secure, and fully customized WordPress websites.",
+        icon: Blocks,
+        fullDesc: "Build fast, secure, and fully customized WordPress websites tailored to your business needs. We create custom themes and plugins to give you full control over your content.",
+        features: [
+            "Custom Theme Development",
+            "Plugin Development",
+            "Performance Tuning",
+            "Security Hardening",
+            "WooCommerce Solutions"
+        ]
+    },
+    {
+        id: "website-maintenance",
+        slug: "website-maintenance",
+        title: "Website Maintenance",
+        shortDesc: "Ongoing updates, security monitoring, and performance optimization.",
+        icon: Database,
+        fullDesc: "Keep your website running smoothly with ongoing updates, security monitoring, performance optimization, and technical support. We handle the technical details so you can focus on your business.",
+        features: [
+            "Security Updates",
+            "Performance Optimization",
+            "Regular Backups",
+            "Content Updates",
+            "Technical Support"
+        ]
+    },
+    {
+        id: "project-management",
+        slug: "project-management",
+        title: "Project Management",
+        shortDesc: "Expert execution balancing business and technical needs.",
+        icon: Rocket,
+        fullDesc: "Protect your time, budget, and peace of mind with expert project managers who understand both business and technical execution. We ensure your project stays on track and delivers value.",
+        features: [
+            "Agile Methodologies",
+            "Risk Management",
+            "Budget Control",
+            "Stakeholder Communication",
+            "Resource Allocation"
         ]
     }
 ];
@@ -166,20 +196,96 @@ export const PROCESS_STEPS = [
 export const TESTIMONIALS = [
     {
         id: 1,
-        content: "NexAgency transformed our legacy system into a modern, cloud-native powerhouse. Their technical expertise is unmatched.",
+        content: "The AI agent they built saved our team hours every week and improved our response time. It feels like we hired a new team member who never sleeps!",
+        author: "Windi Kulina",
+        role: "CMO OF BIMA"
+    },
+    {
+        id: 2,
+        content: "Their technical expertise in Next.js and Cloud architecture is unmatched. They transformed our legacy platform into a high-performance SaaS in record time.",
         author: "Sarah Johnson",
         role: "CTO, TechFlow Inc."
     },
     {
-        id: 2,
-        content: "The design team understood our vision perfectly. The new UX has significantly improved our user retention rates.",
-        author: "Michael Chen",
-        role: "Product Director, InnovateX"
-    },
-    {
         id: 3,
-        content: "Reliable, transparent, and incredibly skilled. They felt like a true extension of our internal team.",
+        content: "Reliable, transparent, and incredibly skilled. They didn't just write code; they provided strategic technical direction that saved us months of R&D.",
         author: "Elena Rodriguez",
         role: "Founder, GreenEarth Startups"
     }
 ];
+
+export const TEAM = [
+    {
+        id: "faisal-f",
+        name: "Faisal F.",
+        role: "Founder & CEO",
+        bio: "Visionary leader with 10+ years in software architecture and agency growth.",
+        image: "/images/team/faisal.jpg",
+        socials: {
+            linkedin: "#",
+            twitter: "#",
+            github: "#"
+        }
+    },
+    {
+        id: "sarah-smith",
+        name: "Sarah Smith",
+        role: "Head of Operations",
+        bio: "Expert in project management and scaling remote engineering teams.",
+        image: "/images/team/sarah.jpg",
+        socials: {
+            linkedin: "#",
+            twitter: "#",
+            github: "#"
+        }
+    },
+    {
+        id: "david-kim",
+        name: "David Kim",
+        role: "Lead UI/UX Designer",
+        bio: "Award-winning designer focused on human-centric digital experiences.",
+        image: "/images/team/david.jpg",
+        socials: {
+            linkedin: "#",
+            twitter: "#",
+            github: "#"
+        }
+    },
+    {
+        id: "alex-chen",
+        name: "Alex Chen",
+        role: "CTO",
+        bio: "Full-stack wizard specializing in AI integrations and cloud infrastructure.",
+        image: "/images/team/alex.jpg",
+        socials: {
+            linkedin: "#",
+            twitter: "#",
+            github: "#"
+        }
+    },
+    {
+        id: "jessica-wu",
+        name: "Jessica Wu",
+        role: "Head of Marketing",
+        bio: "Strategic growth expert with a passion for creative storytelling and data-driven results.",
+        image: "/images/team/jessica.jpg",
+        socials: {
+            linkedin: "#",
+            twitter: "#",
+            github: "#"
+        }
+    },
+    {
+        id: "ryan-h",
+        name: "Ryan H.",
+        role: "Senior Dev Analyst",
+        bio: "Specializing in technical feasibility and optimizing internal development workflows.",
+        image: "/images/team/ryan.jpg",
+        socials: {
+            linkedin: "#",
+            twitter: "#",
+            github: "#"
+        }
+    }
+];
+

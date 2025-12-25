@@ -1,17 +1,17 @@
 export const SITE_CONFIG = {
-  name: "NexAgency",
-  description: "Global Tech Services & Digital Transformation Partner",
-  url: "https://nexagency.com",
-  ogImage: "https://nexagency.com/og.jpg",
+  name: "Devlyfi",
+  description: "Innovation You Can Trust. Results You Can Measure.",
+  url: "https://devlyfi.com",
+  ogImage: "https://devlyfi.com/og.jpg",
   links: {
-    twitter: "https://twitter.com/nexagency",
-    github: "https://github.com/nexagency",
-    linkedin: "https://linkedin.com/company/nexagency",
+    twitter: "https://twitter.com/devlyfi",
+    github: "https://github.com/devlyfi",
+    linkedin: "https://linkedin.com/company/devlyfi",
   },
   contact: {
-    email: "hello@nexagency.com",
-    phone: "+1 (555) 123-4567",
-    address: "123 Tech Avenue, Silicon Valley, CA 94000",
+    email: "boldstart@email.com",
+    phone: "(217) 555-0134",
+    address: "123 Main Street, Suite 200, Austin, TX 78701",
   },
 };
 
@@ -21,5 +21,6 @@ export const NAV_LINKS = [
   { label: "Services", href: "/services" },
   { label: "Work", href: "/work" },
   { label: "Careers", href: "/careers" },
+  { label: "Insights", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
